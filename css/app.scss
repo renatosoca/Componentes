@@ -8,10 +8,30 @@
 *, *::after, *::before {
     box-sizing: border-box;
 }
+:root {
+    --bg-body: #f1f1f1;
+    --bg-aside: #fff;
+    --bg-text: #000;
+    --bg-border: #c8c4c4;
+    --bg-hover: rgba(119, 114, 115, 0.2);
+    --bg-toggle: #fff;
+    --toggle-dark-1: #eaeaea;
+    --toggle-dark-2: #f1f1f1;
+}
 
+.dark_mode {
+    --bg-body: #111;
+    --bg-aside: #101010;
+    --bg-text: #fff;
+    --bg-border: #c8c4c4;
+    --bg-toggle: #222;
+    --toggle-dark-1: #444;
+    --toggle-dark-2: #111;
+}
 body {
     display: flex;
-    background: rgb(244, 244, 244);
+    transition: background .5s ease;
+    background: var(--bg-body);
 }
 
 a{
@@ -19,8 +39,9 @@ a{
 }
 
 .sidebar {
-    background: #fff;
     flex: 0 0 12rem;
+    transition: background .5s ease;
+    background: var(--bg-aside);
     min-height: 100vh;
     overflow: hidden;
     @media screen and (max-width: 1021px) {
@@ -33,7 +54,6 @@ a{
             flex: 0 0 12rem;
         }
         
-
         .sidebar {
             &__link {
                 flex-direction: column;
@@ -45,7 +65,7 @@ a{
                 &.active {
                     background-color: transparent;
                     @media screen and (max-width: 1021px) {
-                        background-color: rgba(119, 114, 115, 0.2);
+                        background-color: var(--bg-hover);
                     }
                 }
             }
@@ -68,19 +88,19 @@ a{
 
     /* Menu de Hamburguesa */
     &__container {
-        color: #000;
+        color: var(--bg-text);
         padding: 1rem 1rem;
-        border-bottom: .1rem #c8c4c4 solid;
+        border-bottom: .1rem var(--bg-border) solid;
     }
     &__menu {
         padding: 1rem;
         border: .1rem transparent solid;
         border-radius: 50%;
         cursor: pointer;
-        transition: border-color .3s ease;
+        transition: border-color .4s ease;
 
         &:hover {
-            border-color: #c8c4c4;
+            border-color: var(--bg-border);
         }
     }
 
@@ -97,7 +117,7 @@ a{
     &__link {
         padding: .5rem .8rem;
         border-radius: .5rem;
-        color: #000;
+        color: var(--bg-text);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -108,14 +128,14 @@ a{
         }
         
         &.active {
-            color: #195bd7;
-            background-color: rgba(119, 114, 115, 0.2);
+            color: #3976e9;
+            background-color: var(--bg-hover);
             @media screen and (max-width: 1021px) {
                 background-color: transparent;
             }
         }
         &:hover {
-            background-color: rgba(119, 114, 115, 0.2);
+            background-color: var(--bg-hover);
         }
     }
 
@@ -134,10 +154,43 @@ a{
             font-weight: normal;
         }
     }
+
+    /* TOGGLE DARK/LIGHT MODE */
+    &__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__content {
+        position: relative;
+        background-color: var(--bg-toggle);
+        width: 4rem;
+        min-height: 2rem;
+        border-radius: 4rem;
+        box-shadow: inset 0 8px 60px rgba( 0, 0, 0, 0.1), inset 0 8px 8px rgba( 0, 0, 0, 0.1), inset 0 -4px 4px rgba( 0, 0, 0, 0.1);
+        transition: .5s;
+    }
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: linear-gradient(to right, var(--toggle-dark-1) 0%, var(--toggle-dark-2) 100%);
+        box-shadow: 0 8px 40px rgba( 0, 0, 0, 0.5), inset 0 4px 4px rgba( 255, 255, 255, 0.2), inset 0 -4px 4px rgba( 255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: .5s;
+        transform: scale(.9);
+
+        &.active {
+            left: 2rem;
+        }
+    }
 }
 
 .container {
     flex: 1;
-    color: #000;
+    color: var(--bg-text);
     padding: 2rem;
 }
