@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4ed4f6;
+}
+img {
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card {
+    position: absolute;
+    min-width: 25rem;
+    //Contenedor de imagenes Secundarias
+    &__images {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: -3.5rem;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    &__list {
+        width: 7rem;
+        height: 6rem;
+        background-color: rgba( 255, 255, 255, 0.2);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .5rem 0;
+        backdrop-filter: blur(.2rem);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 1rem;
+    }
+    &__img {
+        width: 80%;
+        transition: transform .5s ease;
+
+        &:hover {
+            transform: rotate(-20deg);
+            cursor: pointer;
+        }
+    }
+    //Contenedor de la info Principal
+    &__container {
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+        border-radius: 1rem;
+        backdrop-filter: blur(.2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+    &__title {
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+    //Imagen Principal
+    &__primary {
+        width: 80%;
+        transition: transform .4s ease;
+
+        &:hover {
+            transform: scale(1.1) rotate(-10deg);
+        }
+    }
+    //Contenedor de Precios
+    &__prices {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+    &__size {
+        color: #fff;
+        font-weight: bold;
+    }
+    &__price {
+        width: 2rem;
+        height: 2rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: .5rem;
+        transition: transform .4s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-.5rem);
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: -2rem;
+        padding: 1rem;
+        font-size: 1.05rem;
+        font-weight: bold;
+        border-radius: 4rem;
+        border: none;
+        transition: letter-spacing .4s ease;
+
+        &:hover {
+            cursor: pointer;
+            letter-spacing: .1rem;
+        }
+    }
+}
