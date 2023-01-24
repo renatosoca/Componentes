@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Registro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+
+  <body>
+
+    <div class="forms">
+      <div class="forms__container">
+        <form action="#" class="forms__content login">
+          <h2 class="forms__title">Iniciar sesion</h2>
+          <div class="forms__inputs">
+            <label class="forms__label" for="username">
+              <i class="fas fa-user forms__label-icon"></i>
+            </label>
+            <input type="text" id="username" class="forms__input" placeholder="Usuario" />
+          </div>
+
+          <div class="forms__inputs">
+            <label class="forms__label" for="password">
+              <i class="fas fa-lock forms__label-icon"></i>
+            </label>
+            <input type="password" id="password" class="forms__input" placeholder="Contraseña" />
+          </div>
+
+          <input type="submit" value="Iniciar Sesion" class="forms__btn" />
+
+          <p class="forms__description">O Iniciar sesión con plataformas sociales</p>
+          <div class="forms__socials">
+            <a href="#" class="forms__icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>  <!-- Fin Login -->
+
+        <form action="#" class="forms__content register">
+          <h2 class="forms__title">Inscribirse</h2>
+          <div class="forms__inputs">
+            <label class="forms__label" for="username">
+              <i class="fas fa-user forms__label-icon"></i>
+            </label>
+            <input type="text" id="username" class="forms__input" placeholder="Usuario" />
+          </div>
+
+          <div class="forms__inputs">
+            <label class="forms__label" for="email">
+              <i class="fas fa-envelope forms__label-icon"></i>
+            </label>
+            <input type="email" id="email" class="forms__input" placeholder="Email" />
+          </div>
+
+          <div class="forms__inputs">
+            <label class="forms__label" for="password">
+              <i class="fas fa-lock forms__label-icon"></i>
+            </label>
+            <input type="password" id="password" class="forms__input" placeholder="Contraseña" />
+          </div>
+          <input type="submit" class="forms__btn" value="Registrarse" />
+
+          <p class="forms__description">O Regístrese con las plataformas sociales</p>
+
+          <div class="forms__socials">
+            <a href="#" class="forms__icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="forms__icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form> <!-- Fin Registro -->
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panels__container left">
+        <div class="panels__content">
+          <h3 class="panels__title">Nuevo aquí?</h3>
+          <p class="panels__description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+            ex ratione. Aliquid!
+          </p>
+          <button class="panels__btn" id="register">Inscribirse</button>
+        </div>
+        <img src="img/cohete1.svg" class="panels__img" alt="" id="cohete" />
+      </div><!-- Fin Panel Principal -->
+
+      <div class="panels__container right">
+        <div class="panels__content">
+          <h3 class="panels__title">Uno de nosotros</h3>
+          <p class="panels__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            laboriosam ad deleniti.
+          </p>
+          <button class="panels__btn" id="login">Iniciar sesión</button>
+        </div>
+        <img src="img/esfera.svg" class="panels__img" alt="" />
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

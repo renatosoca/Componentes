@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  width: 120rem;
+  height: 120rem;
+  top: -5%;
+  right: 48%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(-45deg, #B92C2E 0%, #F5B0BC 100%);
+  transition: 1s ease-in-out;
+  z-index: 6;
+}
+
+.forms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.forms__container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 75%;
+  width: 50%;
+  transition: 1s 0.7s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 5;
+}
+.forms__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.forms__content.login {
+  z-index: 2;
+}
+.forms__content.register {
+  opacity: 0;
+  z-index: 1;
+}
+.forms__title {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+.forms__inputs {
+  max-width: 25rem;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 0.8rem 0;
+  height: 4rem;
+  border-radius: 4rem;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+.forms__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.forms__label-icon {
+  text-align: center;
+  line-height: 4rem;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+.forms__input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+.forms__input::-moz-placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+.forms__input:-ms-input-placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+.forms__input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+.forms__description {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+.forms__socials {
+  display: flex;
+  justify-content: center;
+}
+.forms__icon {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.45rem;
+  color: #333;
+  border-radius: 50%;
+  border: 0.1rem solid #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.forms__icon:hover {
+  color: #B92C2E;
+  border-color: #B92C2E;
+}
+.forms__btn {
+  width: 10rem;
+  background-color: #B92C2E;
+  border: none;
+  outline: none;
+  padding: 1rem 0;
+  border-radius: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.forms__btn:hover {
+  background-color: #e4282b;
+}
+
+.panels {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.panels__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 6;
+}
+.panels__container.left {
+  pointer-events: all;
+  padding: 3rem 17% 2rem 12%;
+}
+.panels__container.right {
+  pointer-events: none;
+  padding: 3rem 12% 2rem 17%;
+}
+.panels__container.right .panels__img {
+  transform: translateX(65rem);
+}
+.panels__container.right .panels__content {
+  transform: translateX(65rem);
+}
+.panels__content {
+  color: #fff;
+  transition: transform 0.9s ease-in-out;
+  transition-delay: 0.6s;
+}
+.panels__title {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+.panels__description {
+  font-size: 0.95rem;
+  padding: 0.7rem 0;
+}
+.panels__btn {
+  width: 10rem;
+  background-color: transparent;
+  border: 0.1rem #fff solid;
+  outline: none;
+  padding: 1rem 0;
+  border-radius: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.panels__btn:hover {
+  background-color: #e4282b;
+}
+.panels__img {
+  width: 85%;
+  transition: transform 1.1s ease-in-out;
+  transition-delay: 0.4s;
+}/*# sourceMappingURL=app.css.map */
