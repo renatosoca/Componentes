@@ -23,8 +23,60 @@ body::before {
   border-radius: 50%;
   transform: translateY(-50%);
   background-image: linear-gradient(-45deg, #B92C2E 0%, #F5B0BC 100%);
-  transition: 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   z-index: 6;
+}
+@media screen and (max-width: 840px) {
+  body::before {
+    width: 80rem;
+    height: 80rem;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 70%;
+    right: initial;
+    top: initial;
+  }
+}
+body.register::before {
+  right: 52%;
+  transform: translate(100%, -50%);
+}
+@media screen and (max-width: 840px) {
+  body.register::before {
+    width: 80rem;
+    height: 80rem;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 70%;
+    right: initial;
+    top: initial;
+  }
+}
+body.register .login {
+  opacity: 0;
+}
+body.register .register {
+  opacity: 1;
+  transform: translateX(-100%);
+  z-index: 10;
+}
+@media screen and (max-width: 840px) {
+  body.register .register {
+    transform: translate(0%);
+  }
+}
+body.register .left {
+  pointer-events: none;
+  transform: translateX(-65rem);
+}
+body.register .right {
+  pointer-events: all;
+  transform: translate(0, 0);
+}
+@media screen and (max-width: 840px) {
+  body.register .right {
+    transform: translateY(-100%);
+  }
 }
 
 .forms {
@@ -40,10 +92,18 @@ body::before {
   transform: translate(-50%, -50%);
   left: 75%;
   width: 50%;
-  transition: 1s 0.7s ease-in-out;
+  transition: 0.5s 0.2s ease-in-out;
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
+}
+@media screen and (max-width: 840px) {
+  .forms__container {
+    width: 100%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
 }
 .forms__content {
   display: flex;
@@ -55,6 +115,11 @@ body::before {
   overflow: hidden;
   grid-column: 1/2;
   grid-row: 1/2;
+}
+@media screen and (max-width: 840px) {
+  .forms__content {
+    justify-content: flex-start;
+  }
 }
 .forms__content.login {
   z-index: 2;
@@ -73,7 +138,6 @@ body::before {
   width: 100%;
   background-color: #f0f0f0;
   margin: 0.8rem 0;
-  height: 4rem;
   border-radius: 4rem;
   display: grid;
   grid-template-columns: 15% 85%;
@@ -87,16 +151,14 @@ body::before {
 }
 .forms__label-icon {
   text-align: center;
-  line-height: 4rem;
   color: #acacac;
-  transition: 0.5s;
   font-size: 1.1rem;
 }
 .forms__input {
   background: none;
   outline: none;
   border: none;
-  line-height: 1;
+  padding: 0.85rem 0;
   font-weight: 600;
   font-size: 1.1rem;
   color: #333;
@@ -133,7 +195,7 @@ body::before {
   border: 0.1rem solid #333;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 .forms__icon:hover {
   color: #B92C2E;
@@ -144,7 +206,7 @@ body::before {
   background-color: #B92C2E;
   border: none;
   outline: none;
-  padding: 1rem 0;
+  padding: 0.85rem 0;
   border-radius: 3rem;
   color: #fff;
   text-transform: uppercase;
@@ -166,26 +228,38 @@ body::before {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+@media screen and (max-width: 840px) {
+  .panels {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+}
 .panels__container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
   text-align: center;
+  transition: transform 1s ease-in-out;
   z-index: 6;
+}
+@media screen and (max-width: 840px) {
+  .panels__container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+    grid-column: 1/2;
+  }
 }
 .panels__container.left {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
+  transform: translateX(0);
 }
 .panels__container.right {
   pointer-events: none;
   padding: 3rem 12% 2rem 17%;
-}
-.panels__container.right .panels__img {
-  transform: translateX(65rem);
-}
-.panels__container.right .panels__content {
   transform: translateX(65rem);
 }
 .panels__content {
@@ -207,7 +281,7 @@ body::before {
   background-color: transparent;
   border: 0.1rem #fff solid;
   outline: none;
-  padding: 1rem 0;
+  padding: 0.85rem 0;
   border-radius: 4rem;
   color: #fff;
   text-transform: uppercase;
@@ -216,6 +290,11 @@ body::before {
   cursor: pointer;
   transition: 0.5s;
 }
+@media screen and (max-width: 840px) {
+  .panels__btn {
+    border-color: #333;
+  }
+}
 .panels__btn:hover {
   background-color: #e4282b;
 }
@@ -223,4 +302,16 @@ body::before {
   width: 85%;
   transition: transform 1.1s ease-in-out;
   transition-delay: 0.4s;
+}
+@media screen and (max-width: 840px) {
+  .panels__img {
+    width: 12rem;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+  }
+}
+@media screen and (max-width: 600px) {
+  .panels__img {
+    display: none;
+  }
 }/*# sourceMappingURL=app.css.map */
